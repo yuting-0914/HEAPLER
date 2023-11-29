@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+body {
+    background: #F2F2F2;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* font-family: "微軟正黑體", sans-serif;
+    font-size: 12px;
+    color: #666666;
+    letter-spacing: 0.1em; */
+}
+
+.home {
+    display: flex;
+    background-color: #2C5C84;
+    position: relative;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.home ul,li {
+    padding: 0;
+    margin: 0;
+}
+
+.home-login {
+    display: flex;
+    background-color: #F2F2F2;
+    width: 100vw;
+    height: 65vh;
+    margin-top: 30vh;
+    margin-bottom: 5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.loginbar {
+    display: flex;
+    /* background-color: #000; */
+    width: 100%;
+    height: 15vh;
+    /* margin-top: 5vh;
+    margin-bottom: 5vh; */
+    align-items: center;
+    justify-content: center;
+}
+
+.loginbar input {
+    width: 30vw;
+    height: 10vh;
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.25);
+    margin-top: 5vh;
+    color: #000;
+    font-family: "微軟正黑體";
+    font-size: 28px;
+}
+
+.input:hover {
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+
+.logo {
+    display: flex;
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 30vh;
+    height: 30vh;
+    border-radius: 50%;
+    /* box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.25); */
+    top: 15vh;
+    align-items: center;
+    justify-content: center;
+    color: #2C5C84;
+    font-size: larger;
+}
+
+.container {
+    display: flex;
+    flex: 1;
+}
+
+.sidebar {
+    display: flex;
+    flex: 1;
+    flex-direction: column; /* 將子元素垂直排列 */
+    background-color: #2C5C84;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sidebar h2{
+    display: flex;
+    flex: 1;
+    color: white;
+    position:relative;
+    top: 30vh;
+    justify-content: center;
+}
+
+.profile-button {
+    display: flex;
+    width: 10vw;
+    height: 3vh;
+    background-color: white;
+    /* border: 1px #4D4D4D; */
+    padding: 8px;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    font-family: "微軟正黑體";
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-button:hover {
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
+
+.photo {
+    display: flex;
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 15vh;
+    height: 15vh;
+    border-radius: 50%;
+    top: 17.5vh;
+    align-items: center;
+    justify-content: center;
+    color: #999999;
+}
+
+.medical-profile {
+    display: flex;
+    background-color: #000;
+    height: 10vh;
+    margin-bottom: 2vh;
+    align-items: end;
+    justify-content: center;
+    position: relative;
+}
+
+
+.content {
+    flex: 3;
+    padding: 20px;
+}
+
+.content h1{
+    display: flex;
+    justify-content: center;
+    color: #2C5C84;
+}
+
+.content h2{
+    display: flex;
+    color: #4D4D4D;
+    font-family: "微軟正黑體";
+    justify-content: center;
+    margin-top: 15vh;
+    margin-bottom: 2vh;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+form {
+    color: #555;
+    display: flex;
+    padding: 2px;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+  }
+
+.search .searchbar {
+    width: 30vw;
+    height: 6vh;
+    border-radius: 40px;
+    font-family: "微軟正黑體";
+    font-size: medium;
+    outline: none; /* 取消輸入時的邊框發光效果 */
+    padding: 1vw;
+}
+
+/* .search .searchbutton {
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    margin-left: 0.5vw;
+    background-color: #F2F2F2;
+    cursor: pointer;
+    border: none;
+} */
+
+/* Problem!!! */
+button {
+    display: inline-block;
+    /* text-indent: -999px; */
+    overflow: hidden;
+    width: 6vh;
+    height: 6vh;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    /* background-color: #000; */
+    background: url(search.png) no-repeat center; /* Problem:圖片無法顯示!!! */
+    cursor: pointer;
+}
+
+.navbar {
+    display: flex;
+    margin-left:auto; 
+    margin-right:auto;
+    width: 88%;
+    height: 6vh;
+    margin-top: 3vh;
+    margin-bottom: 3vh;
+    font-family: "微軟正黑體";
+    text-align: center;
+    text-decoration: none;
+}
+
+.navbar a:link{
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.navbar a:hover{
+    color: #F2F2F2;
+    text-decoration: none;
+}
+
+.navi {
+    display: flex;
+    flex: 1;
+    height: 6vh;
+    background-color: #999999;
+    align-items: center; 
+    justify-content: center;
+}
+
+.navbar :hover{
+    background-color: #808080;
+    /* background-color: #5D7998; */
+    /* background-color: #4B6A8C; */
+}
+
+.navi-thispage {
+    display: flex;
+    flex: 1;
+    height: 6vh;
+    background-color: #2C5C84;
+    align-items: center; 
+    justify-content: center;
+}
+
+.data-grid {
+    display: flex;
+    margin-left:auto; 
+    margin-right:auto;
+    width: 88%;
+    height: 20vh;
+    margin-top: 3vh;
+    gap: 2vh;
+    flex-wrap: wrap;
+}
+
+.grid-up {
+    flex: 0 0 48%;
+    border: 1px solid #000;
+    background-color: white;
+    height: 30vh;
+    width: 100%;
+    margin-top: 1vh;
+    margin-left:auto; 
+    margin-right:auto;
+    border-radius: 10px;
+}
+
+.grid-down {
+    flex: 0 0 48%;
+    border: 1px solid #000;
+    background-color: white;
+    height: 36vh;
+    width: 100%;
+    margin-top: 1vh;
+    margin-left:auto; 
+    margin-right:auto;
+    border-radius: 10px;
+}
