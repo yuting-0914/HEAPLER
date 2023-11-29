@@ -182,7 +182,7 @@ body {
     position: relative;
 }
 
-form {
+.search form {
     color: #555;
     display: flex;
     padding: 2px;
@@ -190,15 +190,15 @@ form {
     border-radius: 5px;
   }
 
-.search .searchbar {
+/*.search .searchbar {
     width: 30vw;
     height: 6vh;
     border-radius: 40px;
     font-family: "微軟正黑體";
     font-size: medium;
-    outline: none; /* 取消輸入時的邊框發光效果 */
+    outline: none;  取消輸入時的邊框發光效果 
     padding: 1vw;
-}
+} */
 
 /* .search .searchbutton {
     width: 6vh;
@@ -210,8 +210,43 @@ form {
     border: none;
 } */
 
+/*下面是另外加的部分*/
+
+.search-container{
+    display: flex;
+    background-color: #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.search-input{
+    flex: 1;
+    padding: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+.search-button{
+    padding: 10px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+}
+.search-button img{
+    width: 20px;
+    height: 20px;
+}
+
+
+
 /* Problem!!! */
-button {
+.search button.searchbutton {
     display: inline-block;
     /* text-indent: -999px; */
     overflow: hidden;
@@ -222,8 +257,11 @@ button {
     border: 1px solid transparent;
     border-radius: inherit;
     /* background-color: #000; */
-    background: url(search.png) no-repeat center; /* Problem:圖片無法顯示!!! */
+    /*background: url(search.png) no-repeat center; /* Problem:圖片無法顯示!!! */
     cursor: pointer;
+
+    
+
 }
 
 .navbar {
