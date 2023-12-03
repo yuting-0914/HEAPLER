@@ -39,7 +39,7 @@ body {
     justify-content: center;
 }
 
-.loginbar {
+.login {
     display: flex;
     /* background-color: #000; */
     width: 100%;
@@ -50,7 +50,7 @@ body {
     justify-content: center;
 }
 
-.loginbar input {
+.login input {
     width: 30vw;
     height: 10vh;
     background-color: #FFFFFF;
@@ -147,14 +147,63 @@ body {
 
 .medical-profile {
     display: flex;
-    background-color: #000;
-    height: 10vh;
+    flex-direction: row; /* 將子元素水平排列 */
+    /* background-color: #000; */
+    width: 20vw;
+    height: 15vh;
     margin-bottom: 2vh;
-    align-items: end;
+    align-items: center;
     justify-content: center;
     position: relative;
 }
 
+.medical-photo {
+    display: flex;
+    /* position: absolute; */
+    background-color: #FFFFFF;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    margin: 1vw;
+    align-items: center;
+    justify-content: center;
+    color: #999999;
+}
+
+.medical-data {
+    display: flex;
+    flex-direction: column;
+    color: #FFFFFF;
+    justify-content: center;
+}
+
+.medical-data p {
+    height: 3vh;
+    margin: 0; /* 避免預設的margin影響高度與對齊 */
+}
+
+.medical-profile-button {
+    display: flex;
+    width: 5vw;
+    height: 1.5vh;
+    background-color: white;
+    border: none;
+    padding: 8px;
+    border-radius: 30px;
+    color: rgb(0, 0, 0);
+    font-family: "微軟正黑體";
+    font-size: small;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 0.5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.medical-profile-buttonn:hover {
+    background-color: #F2F2F2;
+    cursor: pointer;
+}
 
 .content {
     flex: 3;
@@ -176,92 +225,37 @@ body {
     margin-bottom: 2vh;
 }
 
-.search {
-    display: flex;
-    justify-content: center;
-    position: relative;
-}
-
-.search form {
-    color: #555;
-    display: flex;
-    padding: 2px;
-    border: 1px solid currentColor;
-    border-radius: 5px;
-  }
-
-/*.search .searchbar {
-    width: 30vw;
-    height: 6vh;
-    border-radius: 40px;
-    font-family: "微軟正黑體";
-    font-size: medium;
-    outline: none;  取消輸入時的邊框發光效果 
-    padding: 1vw;
-} */
-
-/* .search .searchbutton {
-    width: 6vh;
-    height: 6vh;
-    border-radius: 50%;
-    margin-left: 0.5vw;
-    background-color: #F2F2F2;
-    cursor: pointer;
-    border: none;
-} */
-
-/*下面是另外加的部分*/
-
 .search-container{
     display: flex;
     background-color: #fff;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-
     max-width: 400px;
     width: 100%;
     margin: 0 auto;
     margin-top: 20px;
 }
-.search-input{
+.search-bar{
     flex: 1;
-    padding: 10px;
+    padding: 1vw;
     border: none;
-    outline: none;
-    font-size: 16px;
+    outline: none; /* 取消輸入時的邊框發光效果 */
+    font-size: medium;
 }
 .search-button{
-    padding: 10px;
-    background-color: #ffffff;
+    display: flex;
+    padding: 1vw;
+    background-color: #FFFFFF;
     border: none;
-    border-radius: 0 25px 25px 0;
+    margin-right: 0.5vw;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 .search-button img{
-    width: 20px;
-    height: 20px;
-}
-
-
-
-/* Problem!!! */
-.search button.searchbutton {
-    display: inline-block;
-    /* text-indent: -999px; */
-    overflow: hidden;
-    width: 6vh;
-    height: 6vh;
-    padding: 0;
-    margin: 0;
-    border: 1px solid transparent;
-    border-radius: inherit;
-    /* background-color: #000; */
-    /*background: url(search.png) no-repeat center; /* Problem:圖片無法顯示!!! */
-    cursor: pointer;
-
-    
-
+    width: 2.5vh;
+    height: 2.5vh;
 }
 
 .navbar {
@@ -322,6 +316,12 @@ body {
     flex-wrap: wrap;
 }
 
+.data-grid h3 {
+    font-weight: 500;
+    margin: 1vw;
+    height: 3vh;
+}
+
 .grid-up {
     flex: 0 0 48%;
     border: 1px solid #000;
@@ -334,6 +334,15 @@ body {
     border-radius: 10px;
 }
 
+.grid-up p {
+    font-size: 300%;
+    margin: 1vw;
+    margin-right: 2vw;
+    text-align: right;
+    height: 22vh;
+    line-height: 22vh;
+}
+
 .grid-down {
     flex: 0 0 48%;
     border: 1px solid #000;
@@ -344,4 +353,74 @@ body {
     margin-left:auto; 
     margin-right:auto;
     border-radius: 10px;
+}
+
+.grid-down p {
+    font-size: 200%;
+    margin: 1vw;
+    margin-left: 2vw;
+    text-align: left;
+    height: 13vh;
+    line-height: 13vh;
+}
+
+#blood-oxygen {
+    flex: 0 0 99%;
+    border: 1px solid #000;
+    background-color: white;
+    height: 36vh;
+    width: 100%;
+    margin-top: 1vh;
+    margin-left:auto; 
+    margin-right:auto;
+    border-radius: 10px;
+}
+
+.grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.grid-bo {
+    flex: 0 0 46.5%;
+    height: 28vh;
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.grid-bo p {
+    font-size: large;
+    height: 3vh;
+    line-height: 3vh;
+    text-align: right;
+    margin: 0;
+    margin-right: 1vw;
+}
+
+#average .grid-up p {
+    font-size: large;
+    margin: 1vw;
+    margin-right: 1.5vw;
+    height: 3vh;
+    line-height: 3vh;
+    text-align: right;
+}
+
+.grid-up img {
+    width: 28vw;
+    margin-left: 1.5vw;
+    margin-top: 14vh;
+}
+
+#bo1 img {
+    width: 28vw;
+    margin-left: 0.5vw;
+    margin-top: 18vh;
+}
+
+#bo2 img {
+    width: 28vw;
+    margin-left: 1vw;
+    margin-top: 18vh;
 }
