@@ -139,6 +139,19 @@ body {
     color: #999999;
 }
 
+.condition {
+    display: flex;
+    position: absolute;
+    background-color: #FFFFFF;
+    width: 25vh;
+    height: 15vh;
+    border-radius: 10pt;
+    top: 45vh;
+    /* align-items: center; */
+    justify-content: center;
+    color: rgb(0, 0, 0);
+}
+
 .medical-profile {
     display: flex;
     flex-direction: row; /* 將子元素水平排列 */
@@ -273,6 +286,11 @@ body {
     color: #F2F2F2;
     text-decoration: none;
 }
+
+.navbar a:visited {
+    color: #F2F2F2;
+    text-decoration: none;
+  }
 
 .navi {
     display: flex;
