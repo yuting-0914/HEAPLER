@@ -4,4 +4,4 @@
 網頁數據即時顯示：
 因為把html跟js分開了，所以要打開文件的環境有兩種方式
 1.用localhost開
-2.在vscode的extentions下載live share。完成後回程式畫面點右下角的"Go Live"
+2.在vscode的extentions下載live server。完成後回程式畫面點右下角的"Go Live"
