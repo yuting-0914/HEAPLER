@@ -4,6 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database-compat.js"></script>
+    <script type="module" src="test.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css"/>
     <title>HEALPER</title>
 </head>
@@ -30,16 +34,19 @@
             <div class="data-grid">
                 <div class="grid-up">
                     <h3>心律</h3>
+                    <span id="heartRate"></span>
                     <p>bmp</p>
                 </div>
                 <div class="grid-up">
                     <h3>溫度</h3>
+                    <span id="temp"></span>
                     <p>°C</p>
                 </div>
                 <div class="grid-down">
                     <h3>血氧</h3>
-                    <p>%SpO₂</p>
+                    <span id="spo2"></span>
                     <p>PRbmp</p>
+                    <p>%SpO₂</p>
                 </div>
                 <div class="grid-down">
                     <h3>GPS</h3>
