@@ -139,19 +139,6 @@ body {
     color: #999999;
 }
 
-.condition {
-    display: flex;
-    position: absolute;
-    background-color: #FFFFFF;
-    width: 25vh;
-    height: 15vh;
-    border-radius: 10pt;
-    top: 45vh;
-    /* align-items: center; */
-    justify-content: center;
-    color: rgb(0, 0, 0);
-}
-
 .medical-profile {
     display: flex;
     flex-direction: row; /* 將子元素水平排列 */
@@ -286,11 +273,6 @@ body {
     color: #F2F2F2;
     text-decoration: none;
 }
-
-.navbar a:visited {
-    color: #F2F2F2;
-    text-decoration: none;
-  }
 
 .navi {
     display: flex;
@@ -434,4 +416,35 @@ body {
     width: 28vw;
     margin-left: 1vw;
     margin-top: 18vh;
+}
+.status-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.status-box {
+    width: 300px;
+    height: 100px;
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-box.normal {
+    background-color: lightgreen;
+    border-color: darkgreen;
+}
+
+.status-box.good {
+    background-color: lightyellow;
+    border-color: darkgoldenrod;
+}
+
+.status-box.warning {
+    background-color: lightcoral;
+    border-color: darkred;
 }
