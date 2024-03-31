@@ -4,14 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEALPER</title>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database-compat.js"></script>
     <script type="module" src="test.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css"/>
-    <title>HEALPER</title>
 </head>
-
 <body>
     <div class="container">
         <div class="sidebar">
@@ -20,8 +19,8 @@
             <div class="photo">
                 <h3>photo</h3>
             </div>
-            <div class="condition">
-                <p>健康狀態：</p>
+            <div class="status-container">
+                <div id="status"></div>
             </div>
         </div>
         <div class="content">
