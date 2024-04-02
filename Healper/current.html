@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database-compat.js"></script>
+    <script type="module" src="test.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <title>HEALPER</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Name</h2>
+            <a href="http://127.0.0.1:8080/Healper/information.php" class="profile-button">個人資料</a>
+            <div class="photo">
+                <h3>photo</h3>
+            </div>
+            <div class="condition">
+                <p>健康狀態：</p>
+            </div>
+        </div>
+        <div class="content">
+            <h1>HEALPER</h1>
+            <div class="navbar">
+                <div class="navi-thispage"><a href="current.html">目前測量數據</a></div>
+                <div class="navi"><a href="today.html">當日平均數據</a></div>
+                <div class="navi"><a href="history.html">歷史數據</a></div>
+            </div>
+            <div class="data-grid">
+                <div class="grid-up">
+                    <h3>心律</h3>
+                    <p>bmp</p>
+                </div>
+                <div class="grid-up">
+                    <h3>溫度</h3>
+                    <p>°C</p>
+                </div>
+                <div class="grid-down">
+                    <h3>血氧</h3>
+                    <p>%SpO₂</p>
+                    <p>PRbmp</p>
+                </div>
+                <div class="grid-down">
+                    <h3>GPS</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
