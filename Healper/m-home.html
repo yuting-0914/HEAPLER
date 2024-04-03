@@ -10,27 +10,24 @@
 
 <body class="home">
     <div class="home-login">
-        <ul>
-            <p>員工編號：</p><input type="text" class="text-bar" placeholder="員工編號">
-            <p>密碼：</p><input type="password" class="text-bar" placeholder="密碼">
-            <p></p>
+        <form name="form" action="http://127.0.0.1:8080/Healper/login.php" method="POST" accept-charset="UTF-8" align="center">
+            <table>
+                <tr>
+                    <td><input type="text" name="員工id" class="text-bar" size="60" placeholder="員工編號"></td>
+                </tr>
+                <tr>
+                    <td><input type="password" name="密碼" class="text-bar" size="60" placeholder="密碼"></td>
+                </tr>
+            </table>
             <input type="submit" value="登入">
-            <input type="submit" align="right" value="重設密碼">
-        </ul>
-        <!-- <ul>
-            <li class="login" id="medical">
-                <input class="input" type="button" value="醫療人員登入" onclick="location.href='search.html'">
-            </li>
-            <li class="login" id="normal">
-                <input class="input" type="button" value="一般用戶登入" onclick="location.href='current.html'">
-            </li>
-        </ul> -->
+            <!-- <input type="submit" align="right" value="重設密碼"> -->
+        </form>
     </div>
     <div class="logo">
         <h1>HEALPER</h1>
     </div>
     <div>
-        <p>醫療人員登入</p>
+        <p>一般用戶登入</p>
     </div>
 </body>
 </html>
