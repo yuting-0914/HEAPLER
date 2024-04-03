@@ -18,6 +18,7 @@ const app = firebase.initializeApp(FirebaseConfig);
 var firebaseRefHeartRate = firebase.database().ref().child('heart rate');
 var firebaseRefSpo2 = firebase.database().ref().child('spo2');
 var firebaseRefTemp = firebase.database().ref().child('temp');
+var firebaseRefCon = firebase.database().ref().child('condition');
 
 firebaseRefHeartRate.on("value", function(snapshot) {
     var heartRate = snapshot.val();
@@ -32,4 +33,9 @@ firebaseRefSpo2.on("value", function(snapshot) {
 firebaseRefTemp.on("value", function(snapshot) {
     var temp = snapshot.val();
     document.getElementById("temp").innerText = temp;
+});
+
+firebaseRefCon.on("value", function(snapshot) {
+    var condition = snapshot.val();
+    document.getElementById("condition").innerText = condition;
 });
