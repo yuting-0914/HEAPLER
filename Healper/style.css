@@ -139,7 +139,7 @@ body {
     color: #999999;
 }
 
-.div_condition {
+.condition {
     display: flex;
     position: absolute;
     background-color: pink;
@@ -347,10 +347,10 @@ body {
 }
 
 .grid-up p {
-    font-size: 300%;
+    font-size: 400%;
     margin: 1vw;
     margin-right: 2vw;
-    text-align: right;
+    text-align: center;
     height: 22vh;
     line-height: 22vh;
 }
@@ -368,12 +368,12 @@ body {
 }
 
 .grid-down p {
-    font-size: 200%;
+    font-size: 400%;
     margin: 1vw;
-    margin-left: 2vw;
-    text-align: left;
-    height: 13vh;
-    line-height: 13vh;
+    margin-right: 2vw;
+    text-align: center;
+    height: 22vh;
+    line-height: 22vh;
 }
 
 #blood-oxygen {
@@ -442,7 +442,8 @@ body {
 }
 
 #map-canvas{
-    width:100%;
-    height:36vh;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width:92%;
+    height:32vh;
+    margin-top: 2vh;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
 }
