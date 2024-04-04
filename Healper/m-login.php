@@ -31,17 +31,16 @@
                 header("Location: change_password.php?員工id=" . $員工id);
                 exit();
             } else {
-                
                 $_SESSION['員工id']=$row['員工id'];
                 $_SESSION['密碼']=$row['密碼'];
-                header("Location: search.html");
+                header("Location: m-search.html");
                 exit();
             }
         }
         else{
             $_SESSION['is_login'] = FALSE;
             $_SESSION['error_message'] = "員工編號或密碼輸入錯誤！";
-            header('Location: m-shome.html');
+            header('Location: m-home.html');
             exit();
         }
     }

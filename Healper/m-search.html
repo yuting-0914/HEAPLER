@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <title>HEALPER</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Name</h2>
+            <!-- <a href="" class="profile-button">個人資料</a> -->
+            <div class="photo">
+                <h3>photo</h3>
+            </div>
+        </div>
+        <div class="content">
+            <h1>HEALPER</h1>
+            <h2>請輸入患者健保卡號或病例號</h2>
+            <div class="search-container">
+                <form name="form" action="m-search.php" method="POST" accept-charset="UTF-8" align="center">
+                    <input type="search" class="search-bar" name="search_keyword" placeholder="健保卡號或病例號">
+                    <button type="submit" class="search-button"> <img src="search.png" alt="Search"></button>
+                    <!-- <button type="submit" class="search-button" onclick="location.href='m-current.html'"> <img src="search.png" alt="Search"></button> -->
+                </form>
+            </div> 
+        </div>
+    </div>
+</body>
+</html>
