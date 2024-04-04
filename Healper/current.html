@@ -62,19 +62,18 @@
         }, function (error) {
             console.log("Error: " + error.code);
         });
-    </script>
+</script>
 
 <body>
     <div class="container">
         <div class="sidebar">
             <h2>Name</h2>
-            <a href="information.php" class="profile-button">個人資料</a>
+            <a href="http://127.0.0.1:8080/Healper/information.php" class="profile-button">個人資料</a>
             <div class="photo">
                 <h3>photo</h3>
             </div>
-            <div class="div_condition">
+            <div class="condition">
                 <p>健康狀態：</p>
-                <span id="condition" class="condition"></span>
             </div>
         </div>
         <div class="content">
@@ -87,17 +86,18 @@
             <div class="data-grid">
                 <div class="grid-up">
                     <h3>心律</h3>
-                    <span id="heartRate" class="heartRate"></span><p>bmp</p>
+                    <p><span id="heartRate"></span> bmp</p>
                 </div>
                 <div class="grid-up">
                     <h3>溫度</h3>
-                    <span id="temp" class="temp"></span><p>°C</p>
+                    <p><span id="temp"></span> °C</p>
                 </div>
                 <div class="grid-down">
                     <h3>血氧</h3>
-                    <span id="spo2" class="spo2"></span><p>%SpO₂</p>
+                    <p><span id="spo2"></span> %SpO₂</p>
                 </div>
                 <div class="grid-down">
+                    <!-- <h3>GPS</h3> -->
                     <center><div id="map-canvas"></div></center>
                 </div>
             </div>
