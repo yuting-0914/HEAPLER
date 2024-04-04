@@ -39,3 +39,16 @@ firebaseRefCon.on("value", function(snapshot) {
     var condition = snapshot.val();
     document.getElementById("condition").innerText = condition;
 });
+// Listen for changes in condition node
+firebaseRefCon.on("value", function(snapshot) {
+    var condition = snapshot.val();
+    var statusElement = document.getElementById("status");
+
+    if (condition === "狀態正常") {
+        statusElement.innerHTML = '<div class="status-box normal">狀態正常</div>';
+    } else if (condition === "狀態良好") {
+        statusElement.innerHTML = '<div class="status-box good">狀態良好</div>';
+    } else if (condition === "請留意您的身體狀況") {
+        statusElement.innerHTML = '<div class="status-box warning">請留意您的身體狀況</div>';
+    }
+});
