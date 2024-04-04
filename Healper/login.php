@@ -12,14 +12,14 @@
             exit();
         }
 
-        $sql="SELECT * FROM 使用者 WHERE 身分證字號='$身分證字號' && 健保卡號='$健保卡號'";
-        // $result = $conn->query($sql);
+        $sql="SELECT * FROM 使用者 WHERE 身分證字號='$身分證字號' AND 健保卡號='$健保卡號'";
+        $result = $conn->query($sql);
 
         // 避免SQL注入問題
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $身分證字號, $健保卡號);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        // $stmt = $conn->prepare($sql);
+        // $stmt->bind_param("ss", $身分證字號, $健保卡號);
+        // $stmt->execute();
+        // $result = $stmt->get_result();
 
         if ($result->num_rows == 1) {
             $_SESSION['is_login'] = TRUE;
