@@ -13,11 +13,11 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f2f2f2;
+    background-color: #F2F2F2;
   }
 
   .change-password-container {
-    background-color: #fff;
+    background-color: #FFF;
     border-radius: 8px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -33,14 +33,14 @@
     width: calc(100% - 20px);
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #2C5C84;
     border-radius: 4px;
   }
 
   .change-password-container input[type="submit"] {
     width: 100%;
-    background-color: #4caf50;
-    color: #fff;
+    background-color: #2C5C84;
+    color: #FFF;
     border: none;
     padding: 10px;
     border-radius: 4px;
@@ -49,7 +49,7 @@
   }
 
   .change-password-container input[type="submit"]:hover {
-    background-color: #45a049;
+    background-color: #999999;
   }
 </style>
 </head>
