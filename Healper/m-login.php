@@ -13,13 +13,13 @@
         }
 
         $sql="SELECT * FROM 醫療人員 WHERE 員工id='$員工id' AND 密碼='$密碼'";
-        // $result = $conn->query($sql);
+        $result = $conn->query($sql);
 
-        // 避免SQL注入問題
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ss", $員工id, $密碼);
-        $stmt->execute();
-        $result = $stmt->get_result();
+        // 避免SQL注入問題（沒用的爛東西）
+        // $stmt = $conn->prepare($sql);
+        // $stmt->bind_param("ss", $員工id, $密碼);
+        // $stmt->execute();
+        // $result = $stmt->get_result();
 
         if ($result->num_rows == 1) {
             $row = $result->fetch_assoc();
