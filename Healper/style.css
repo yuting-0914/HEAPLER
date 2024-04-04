@@ -139,18 +139,39 @@ body {
     color: #999999;
 }
 
-.condition {
+.status-container {
+    margin-top: 10vh; /* 调整上方间距为45vh */
     display: flex;
-    position: absolute;
-    background-color: pink;
-    border: 2px solid red;
     justify-content: center;
-    /* align-items: center; */
-    width: 25vh;
-    height: 15vh;
-    border-radius: 10pt;
-    margin-top: auto;
-    top:45vh;
+    position: absolute; /* 添加绝对定位 */
+    left: 0;
+    right: 0;
+}
+
+.status-box {
+    width: 25vh; /* 调整框框宽度为25vh */
+    height: 15vh; /* 调整框框高度为15vh */
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 10pt; /* 统一圆角单位为pt */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.status-box.normal {
+    background-color: lightgreen;
+    border-color: darkgreen;
+}
+
+.status-box.good {
+    background-color: lightyellow;
+    border-color: darkgoldenrod;
+}
+
+.status-box.warning {
+    background-color: lightcoral;
+    border-color: darkred;
 }
 
 .medical-profile {
