@@ -27,7 +27,7 @@
             $row = $result->fetch_assoc();
             $_SESSION['身分證字號']=$row['身分證字號'];
             $_SESSION['健保卡號']=$row['健保卡號'];
-            header('Location: current.html');
+            header('Location: current.php');
             exit();
         }
         else{
