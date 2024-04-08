@@ -40,9 +40,9 @@ if(empty($username) || empty($password)){
             header("Location: change_pwd.php?username=" . $username);
             exit();
         } else {
-            $_SESSION['username']=$row['username'];
-            $_SESSION['password']=$row['password'];
-            header("Location: search.html");
+            $_SESSION['username']=$username;
+            $_SESSION['password']=$password;
+            header("Location: search.php");
             exit();
         }
     } else{

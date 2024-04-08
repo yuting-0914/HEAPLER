@@ -1,4 +1,5 @@
 <?php
+session_start();
 // 資料庫連接
 $mysqli = new mysqli("localhost", "root", "sinyu0306", "Healper");
 
@@ -6,8 +7,35 @@ $mysqli = new mysqli("localhost", "root", "sinyu0306", "Healper");
 if ($mysqli->connect_errno) {
     echo "Failed to connect to MySQL: " . $mysqli->connect_error;
     exit();
+} 
+
+// 確認是否有搜尋到患者資料
+if(isset($_GET['search_keyword']) && !empty($_GET['search_keyword'])) {
+    $search_keyword = $_GET['search_keyword'];
+
+    $sql = "SELECT 使用者姓名 FROM 使用者 WHERE 健保卡號 = '$search_keyword' OR 病歷號='$search_keyword'";
+    $result = $mysqli->query($sql);
+
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $使用者姓名 = $row['使用者姓名'];
+    } else {
+        echo "找不到相應的患者資料";
+        exit;
+    }
 }
 
+if(isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+
+    $sql="SELECT 員工姓名 FROM 醫療人員 WHERE 員工id = '$username'";
+    $result = $mysqli->query($sql);
+
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $員工姓名 = $row['員工姓名'];
+    }
+}
 // 資料庫查詢
 $sql = "SELECT CONCAT(DATE_FORMAT(量測時間, '%H'), ':', LPAD((MINUTE(量測時間) DIV 5) * 5, 2, '0')) AS minute_interval, AVG(體溫) AS avg_temperature, AVG(血氧) AS avg_blood_oxygen, AVG(心率) AS avg_heart_rate FROM 健康數據 GROUP BY minute_interval ORDER BY minute_interval ASC";
 $result = $mysqli->query($sql);
@@ -36,29 +64,39 @@ $mysqli->close();
 
 <body>
     <div class="container">
-        <div class="sidebar">
-            <h2>Name</h2>
-            <a href="" class="profile-button">患者病歷</a>
+    <div class="sidebar">
             <div class="photo">
                 <h3>photo</h3>
             </div>
+            <?php
+                if(isset($使用者姓名)) {
+                    echo "<h2>" . $使用者姓名 . "</h2>";
+                    echo "<a href='m-information.php?search_keyword=$search_keyword' class='profile-button'>患者資料</a>";
+                }
+            ?>
             <div class="medical-profile">
                 <div class="medical-photo">
                     <h5>photo</h5>
                 </div>
                 <div class="medical-data">
-                    <p>Name</p>
-                    <p>ID:XXXXXXXXXX</p>
-                    <a href="" class="medical-profile-button">個人主頁</a>
+                    <?php
+                        if(isset($員工姓名)) {
+                            echo "<p>" . $員工姓名 . "</p>";
+                        }
+                        if(isset($_SESSION['username'])) {
+                            echo "<p> ID:" . $username . "</p>";
+                        }
+                    ?>
+                    <a href="search.php" class="medical-profile-button">個人主頁</a>
                 </div>
             </div>
         </div>
         <div class="content">
             <h1>HEALPER</h1>
             <div class="navbar">
-                <div class="navi"><a href="m-current.html">目前測量數據</a></div>
-                <div class="navi-thispage"><a href="m-today.php">當日平均數據</a></div>
-                <div class="navi"><a href="m-history.php">歷史數據</a></div>
+                <div class="navi"><a href="m-current.php<?php echo isset($search_keyword) ? '?search_keyword=' . $search_keyword : ''; ?>">目前測量數據</a></div>
+                <div class="navi-thispage"><a href="m-today.php<?php echo isset($search_keyword) ? '?search_keyword=' . $search_keyword : ''; ?>">當日平均數據</a></div>
+                <div class="navi"><a href="m-history.php<?php echo isset($search_keyword) ? '?search_keyword=' . $search_keyword : ''; ?>">歷史數據</a></div>
             </div>
             <div class="data-grid" id="average">
                 <!-- 折線圖放置處 -->

@@ -33,9 +33,12 @@ if(empty($id) || empty($card)){
     */
     if ($result->num_rows == 1) {
         $_SESSION['is_login'] = TRUE;
-        $_SESSION['身分證字號']= $id;
-        $_SESSION['健保卡號']= $card;
-        header('Location: current.html');
+
+
+        $row = $result->fetch_assoc();
+        $_SESSION['id']= $id;
+        $_SESSION['card']= $card;
+        header('Location: current.php');
         exit();
     }else{
         $_SESSION['is_login'] = FALSE;

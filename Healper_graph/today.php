@@ -1,5 +1,6 @@
 <?php
 // 資料庫連接
+session_start();
 $mysqli = new mysqli("localhost", "root", "sinyu0306", "Healper");
 
 // 檢查連接是否成功
@@ -19,8 +20,39 @@ while ($row = $result->fetch_assoc()) {
     $minute_averages[] = $row;
 }
 
+// 設置使用者姓名變數
+$使用者姓名 = ""; // 初始化使用者姓名變數
+$card = '';
+
+if(isset($_GET['search_keyword']) && !empty($_GET['search_keyword'])) {
+    $search_keyword = $_GET['search_keyword'];
+
+    $sql="SELECT 使用者姓名 FROM 使用者 WHERE 健保卡號 = '$search_keyword' OR 病歷號='$search_keyword'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $使用者姓名 = $row['使用者姓名'];
+        $card = $row['card'];
+        $病歷號 = $row['病歷號'];
+    }
+}
+
+if(isset($_SESSION['card'])) {
+    $card = $_SESSION['card'];
+
+    $sql="SELECT 使用者姓名 FROM 使用者 WHERE 健保卡號 = '$card'";
+    $result = $mysqli->query($sql);
+
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $使用者姓名 = $row['使用者姓名'];
+    }
+}
 // 關閉 MySQL 連接
 $mysqli->close();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -37,8 +69,12 @@ $mysqli->close();
 <body>
     <div class="container">
         <div class="sidebar">
-            <h2>Name</h2>
-            <a href="" class="profile-button">個人資料</a>
+            <?php
+                if(isset($使用者姓名)) {
+                    echo "<h2>" . $使用者姓名 . "</h2>";
+                    echo "<a href='information.php?card=$card' class='profile-button'>個人資料</a>";
+                }
+            ?>
             <div class="photo">
                 <h3>photo</h3>
             </div>
@@ -46,7 +82,7 @@ $mysqli->close();
         <div class="content">
             <h1>HEALPER</h1>
             <div class="navbar">
-                <div class="navi"><a href="current.html">目前測量數據</a></div>
+                <div class="navi"><a href="current.php">目前測量數據</a></div>
                 <div class="navi-thispage"><a href="today.php">當日平均數據</a></div>
                 <div class="navi"><a href="history.php">歷史數據</a></div>
             </div>
