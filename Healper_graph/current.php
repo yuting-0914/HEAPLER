@@ -11,11 +11,7 @@
     if (!$conn) {
         die("連接失敗: " . mysqli_connect_error());
     }
-    // 確認使用者是否已登入，若未登入則重新導向到登入頁面（等確定有連上再試）
-    // if (!isset($_SESSION['is_login']) || $_SESSION['is_login'] !== true) {
-    //     header('Location: home.html');
-    //     exit();
-    // }
+    
 
     // 健保卡號初始化
     $card = '';
@@ -58,13 +54,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HEALPER</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.0.0/firebase-database-compat.js"></script>
     <script type="module" src="test.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCaDAfZPctTUNxJx6mxCVbTdXd38exVRYk&callback=initialize" async defer></script>
-    <link href="style.css" rel="stylesheet" type="text/css"/>
-    <title>HEALPER</title>
 </head>
 
 
@@ -78,15 +74,15 @@
                 }
             ?>
 
-            <!--<h2>Name</h2>
-            <a href="information.php" class="profile-button">個人資料</a>-->
             <div class="photo">
                 <h3>photo</h3>
             </div>
+            
+
             <div class="status-container">
+                <div id="suggestion"></div>
                 <div id="status"></div>
             </div>
-            
         </div>
         <div class="content">
             <h1>HEALPER</h1>
@@ -143,28 +139,53 @@
         firebase.initializeApp(FirebaseConfig);
     
         var ref = firebase.database().ref();
-            ref.on("value", function(snapshot) {
-                var gps = snapshot.val();
-                console.log(gps.LAT);
-                console.log(gps.LNG);
-                lat = gps.LAT;
-                lng = gps.LNG;
-    
-                map.setCenter({lat:lat, lng:lng, alt:0});
-                mark.setPosition({lat:lat, lng:lng, alt:0});
-    
-                lineCoords.push(new google.maps.LatLng(lat, lng));
-    
-                var lineCoordinatesPath = new google.maps.Polyline({
-                    path: lineCoords,
-                    geodesic: true,
-                    strokeColor: '#2E10FF'
-                });
-    
-                lineCoordinatesPath.setMap(map);
-            }, function (error) {
-                console.log("Error: " + error.code);
+        ref.on("value", function(snapshot) {
+            var gps = snapshot.val();
+            console.log(gps.LAT);
+            console.log(gps.LNG);
+            lat = gps.LAT;
+            lng = gps.LNG;
+
+            map.setCenter({lat:lat, lng:lng, alt:0});
+            mark.setPosition({lat:lat, lng:lng, alt:0});
+
+            lineCoords.push(new google.maps.LatLng(lat, lng));
+
+            var lineCoordinatesPath = new google.maps.Polyline({
+                path: lineCoords,
+                geodesic: true,
+                strokeColor: '#2E10FF'
             });
+
+            lineCoordinatesPath.setMap(map);
+        }, function (error) {
+            console.log("Error: " + error.code);
+        });
+
+        var firebaseRefCon = firebase.database().ref().child('condition'); 
+
+        firebaseRefCon.on("value", function(snapshot) {
+            var condition = snapshot.val();
+            var statusElement = document.getElementById("status");
+            var healthStatus = getHealthStatus(condition);
+            statusElement.innerHTML = '<div class="status-box ' + healthStatus.class + '">' + healthStatus.text + '</div>';
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    var suggestion = this.responseText;
+                    if (suggestion.trim() !== "") {
+                        // 衛教建議存在時才顯示溫馨提醒
+                        document.getElementById("suggestion").innerHTML = '<div class="reminder">溫馨提醒</div>' + suggestion;
+                    } else {
+                        // 衛教建議不存在時，清空建議內容
+                        document.getElementById("suggestion").innerHTML = "";
+                    }
+                }
+            };
+            xhttp.open("GET", "get_advice.php?status=" + encodeURIComponent(healthStatus.text), true);
+            xhttp.send();
+        });
     </script>
 </body>
 </html>
