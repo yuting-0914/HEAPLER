@@ -174,13 +174,7 @@
             xhttp.onreadystatechange = function() {
                 if (this.readyState == 4 && this.status == 200) {
                     var suggestion = this.responseText;
-                    if (suggestion.trim() !== "") {
-                        // 衛教建議存在時才顯示溫馨提醒
-                        document.getElementById("suggestion").innerHTML = '<div class="reminder">溫馨提醒</div>' + suggestion;
-                    } else {
-                        // 衛教建議不存在時，清空建議內容
-                        document.getElementById("suggestion").innerHTML = "";
-                    }
+                    document.getElementById("suggestion").innerText = suggestion;
                 }
             };
             xhttp.open("GET", "get_advice.php?status=" + encodeURIComponent(healthStatus.text), true);
