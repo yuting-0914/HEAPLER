@@ -158,26 +158,46 @@ body {
 }
 
 .status-box {
-    width: 25vh; /* 调整框框宽度为25vh */
-    height: 15vh; /* 调整框框高度为15vh */
+    width: 30vh; /* 调整框框宽度为25vh */
+    height: 20vh; /* 调整框框高度为15vh */
     margin: 10px;
     border: 2px solid;
     border-radius: 10pt; /* 统一圆角单位为pt */
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    position: relative;
 }
 
-.status-box.normal {
+#suggestion {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    color: #000000;
+    width: 25vh; 
+    height: 15vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 狀態良好：無異常 */
+.status-box.good {
     background-color: lightgreen;
     border-color: darkgreen;
 }
 
-.status-box.good {
-    background-color: lightyellow;
-    border-color: darkgoldenrod;
+/* 有一個異常建議 */
+.status-box.normal {
+    background-color: lightblue;
+    border-color: darkblue;
 }
 
+/* 有一個以上異常建議 */
 .status-box.warning {
     background-color: lightcoral;
     border-color: darkred;
