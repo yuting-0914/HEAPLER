@@ -113,8 +113,8 @@ function fetchAdvice(status) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var suggestion = this.responseText;
-            var suggestionElement = document.getElementById("suggestion"); // 修改此行
-            if (suggestionElement) suggestionElement.innerText = suggestion; // 修改此行
+            var suggestionElement = document.getElementById("suggestion");
+            if (suggestionElement) suggestionElement.innerText = suggestion;
         }
     };
     xhttp.open("GET", "get_advice.php?status=" + status, true);
