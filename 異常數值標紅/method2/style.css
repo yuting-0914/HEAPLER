@@ -1,6 +1,0 @@
-/* 在原本的 style.css 中新增 */
-/* 配合 test.js 的 abnormal 狀態 */
-
-.grid-up p.abnormal, .grid-down p.abnormal {
-    color: red;
-}
