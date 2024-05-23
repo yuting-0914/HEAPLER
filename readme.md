@@ -63,7 +63,7 @@ AIoT在智慧醫療的應用/
 # 實驗步驟
 
 ## 1. 硬體連接
-### 以下皆為連接Raspberry Pi 4 之 gpio 腳位標示
+**以下皆為連接Raspberry Pi 4 之 gpio 腳位標示**
 * DHT11：
     * vcc - 1/2
     * gnd - 6/9
