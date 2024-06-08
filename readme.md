@@ -7,6 +7,7 @@
 ```plaintext
 AIoT在智慧醫療的應用/
 ├── README.md                               # 專案總體說明文件
+|
 ├── 感測器/
 │   ├── all
 │   │   ├── sensors.py                      # 合併三個感測器之程式
@@ -30,7 +31,12 @@ AIoT在智慧醫療的應用/
 │   │   ├── dht11.py                        # DHT11 感測器操作
 │   │   ├── dht11.pyc                       # DHT11 感測器操作的編譯版本
 │   │   └── dht11_example.py                # DHT11 感測器範例
-│
+|
+├── AI判斷/
+|   ├── ai_condition
+|   |   ├── AI_condition.ipynb              # AI判斷模型
+|   |   ├── dataset.xls                     # 資料集
+│   │   └── README.md                       # AI判斷 說明文件
 ├── 網頁/
 │   ├── all                     
 │   │   ├── db_connect.php                  # 資料庫連接
@@ -60,10 +66,17 @@ AIoT在智慧醫療的應用/
 
 ```
 
+# 第三方來源註明
+本專案使用了以下第三方資源：
+* GPS 感測器程式碼： [Use NEO-6M Module with Raspberry Pi](https://sparklers-the-makers.github.io/blog/robotics/use-neo-6m-module-with-raspberry-pi/)，並遵循其使用條款。
+
+* MAX30102 感測器程式碼：[max30102-tutorial-raspberrypi](https://github.com/vrano714/max30102-tutorial-raspberrypi)，並遵循其使用條款。
+
+* AI_condition 程式碼：[Health-Monitoring-system-by-using-Machine-Learning](https://github.com/Ramyadeveloper59/Health-Monitoring-system-by-using-Machine-Learning)，並遵循其使用條款。
 # 實驗步驟
 
 ## 1. 硬體連接
-**以下皆為連接Raspberry Pi 4 之 gpio 腳位標示**
+### 以下皆為連接Raspberry Pi 4 之 gpio 腳位標示
 * DHT11：
     * vcc - 1/2
     * gnd - 6/9
