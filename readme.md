@@ -32,12 +32,11 @@ AIoT在智慧醫療的應用/
 │   │   ├── dht11.pyc                       # DHT11 感測器操作的編譯版本
 │   │   └── dht11_example.py                # DHT11 感測器範例
 |
-├── AI判斷/
-|   ├── ai_condition
-|   |   ├── AI_condition.ipynb              # AI判斷模型
-|   |   ├── dataset.xls                     # 資料集
-│   │   └── README.md                       # AI判斷 說明文件
-├── 網頁/
+├── ai_condition/
+|   ├── AI_condition.ipynb                  # AI判斷模型
+|   ├── dataset.xls                         # 資料集
+│   └── README.md                           # AI判斷 說明文件
+├── HEALPER_graph/
 │   ├── all                     
 │   │   ├── db_connect.php                  # 資料庫連接
 │   │   ├── style.css                       # 主樣式表
