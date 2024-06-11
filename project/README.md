@@ -22,7 +22,7 @@ project/
 │   ├── notification_controller.dart    #通知設定檔      
 └── pubspec.yaml    #配置文件
 android 環境建設:
-    因每一版SDK的環境建置不一定相同，因此不特別說明
+    因每一版SDK的環境建置不一定相同，因此不特別說明，以下是我參考的網站
     flutter_local_notifications: https://pub.dev/packages/flutter_local_notifications
     firebase相關:https://www.youtube.com/watch?v=YVB94s21jD8&t=167s&pp=ygUQZmx1dHRlciBmaXJlYmFzZQ%3D%3D
 圖片增設:
