@@ -6,21 +6,21 @@ project/
 │   ├── app              
 │   │   └── src
 │   │       └── main
-│   │           └── AndroidManifest.xml
-│   │       ├── build.gradle 
-│   │       ├── google-services.json                   
-│   └── build.gradle             
+│   │           └── AndroidManifest.xml    #因建設環境而需改動的檔
+│   │       ├── build.gradle    #因建設環境而需改動的檔             
+│   │       ├── google-services.json    #因建設環境而需新增的檔                   
+│   └── build.gradle    #因建設環境而需改動的檔             
 ├── assets                                           
 │   ├── images                   
-│   │   ├── heartrate.png
-│   │   ├── spo2.png
-│   │   ├── temp.png
-│   │   ├── your_image.png              
+│   │   ├── heartrate.png    #APP裡的圖片
+│   │   ├── spo2.png    #APP裡的圖片
+│   │   ├── temp.png    #APP裡的圖片
+│   │   ├── your_image.png    #APP裡的圖片              
 ├── lib                        
-│   ├── firebase_options.dart                
-│   ├── main.dart
-│   ├── notification_controller.dart      
-└── pubspec.yaml
+│   ├── firebase_options.dart    #firebase建設完自動生成的檔               
+│   ├── main.dart    #APP的程式碼
+│   ├── notification_controller.dart    #通知設定檔      
+└── pubspec.yaml    #配置文件
 android 環境建設:
     因每一版SDK的環境建置不一定相同，因此不特別說明
     flutter_local_notifications: https://pub.dev/packages/flutter_local_notifications
