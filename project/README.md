@@ -26,7 +26,7 @@ android 環境建設:
     flutter_local_notifications: https://pub.dev/packages/flutter_local_notifications
     firebase相關:https://www.youtube.com/watch?v=YVB94s21jD8&t=167s&pp=ygUQZmx1dHRlciBmaXJlYmFzZQ%3D%3D
 圖片增設:
-    在pubspec.yaml中加入  
+    在pubspec.yaml中加入下列程式碼以後，才能放入APP中  
     assets:
     - assets/images/your_image.png
     - assets/images/heartrate.png
