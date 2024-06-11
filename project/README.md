@@ -10,7 +10,7 @@ project/
 │   │       ├── build.gradle    #因建設環境而需改動的檔             
 │   │       ├── google-services.json    #因建設環境而需新增的檔                   
 │   └── build.gradle    #因建設環境而需改動的檔             
-├── assets                                           
+├── assets    #需自行建設                                           
 │   ├── images                   
 │   │   ├── heartrate.png    #APP裡的圖片
 │   │   ├── spo2.png    #APP裡的圖片
