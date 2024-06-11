@@ -33,6 +33,7 @@ android 環境建設:
     - assets/images/spo2.png
     - assets/images/temp.png
 SDK下載:
+  在pubspec.yaml中加入下列程式碼以後，SDK會被下載
     dependencies:
   flutter:
     sdk: flutter
